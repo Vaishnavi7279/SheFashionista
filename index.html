@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="Images\logo.jpg" type="image/x-icon">
+  <title>SheFashionista</title>
+  <link href="SheFashionista.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- DYNAMIC and RESPONSIVE NAVBAR -->
+<nav class="navbar">
+
+    <!--To adjust the options according to the screen size-->
+    <input type="checkbox" id="check">
+    <label for="check" class="more">
+      <i class='bx bx-menu'id="menu"></i>
+    </label>
+
+    <!--Options and dropdown menu -->
+    <ul>
+      <li>
+          <a href="#clothing">Clothing</a>
+          <div class="dropdown-content">
+              <a href="#western">Western</a>
+              <a href="#Formals">Formals</a>
+              <a href="#ethnic">Ethnic</a>
+              <a href="#sleepwear">Sleepwear</a>
+              <a href="#casuals">Casuals</a>
+          </div>
+      </li>
+      <li>
+          <a href="#accessories">Accessories</a>
+          <div class="dropdown-content">
+              <a href="#skincare">Skincare</a>
+              <a href="#hair-products">Hair Products</a>
+              <a href="#others">Others</a>
+          </div>
+      </li>
+      <li>
+        <a href="#footwear">Footwear</a>
+        <div class="dropdown-content">
+            <a href="#shoes">Shoes</a>
+            <a href="#flats">Flats</a>
+            <a href="#heels">Heels</a>
+        </div>
+      </li>
+      <li><a href="#jewellery">Jewellery</a></li>
+      <li><a href="#handbags">Handbags</a></li>
+      <a href="#" class="login">Start Shopping</a>
+    </ul>
+
+    <!--To fix the navbar on the top of the page during scrolling-->
+    <script>
+        window.onscroll = function() {
+          makeNavbarSticky();
+        };
+  
+        const navbar = document.querySelector(".navbar");
+        const offsetTop = navbar.offsetTop;
+  
+        function makeNavbarSticky() {
+          if (window.pageYOffset >= offsetTop) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+      </script>
+</nav>
+
+  <!-- HEADING -->
+  <div class="heading">
+    <main>
+      <section class="landing">
+          <center>
+                <div id="typing-animation"> <span class="cursor"></span></div>
+                <!--To display the heading in a typing animation-->
+                <script src="TypingAnimation.js"></script>
+          </center>
+      </section>
+    </main>
+  </div>
+  
+
+  <!-- MAIN CAROUSEL -->
+  <div class="carousel-box"> 
+    <div class="title">Clothing</div>
+      <div class="carousel">
+          <img class="carousel-item carousel-item-1" src="Images\clothing.jpg" alt="Clothing">
+          <img class="carousel-item carousel-item-2" src="Images\shoes.jpg" alt="Shoes" >
+          <img class="carousel-item carousel-item-3" src="Images\watches.jpg" alt="Watches">
+          <img class="carousel-item carousel-item-4" src="Images\accessories.jpg" alt="Accessories">
+          <img class="carousel-item carousel-item-5" src="Images\jewellery.jpg" alt="Jewellery">
+          <img class="carousel-item carousel-item-6" src="Images\handbags.jpg" alt="Handbags">
+          <img class="carousel-item carousel-item-7" src="Images\western.jpg" alt="Western">
+      </div>
+  
+      <div class="carousel-controls"> 
+          <button class="carousel-control-previous" id="prevBtn">Previous</button>
+          <button class="carousel-control-next" id="nextBtn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!--To move the carousel images-->
+  <script src="Carousel.js"></script>
+
+  <!-- FIND YOUR FIT -->
+  <!-- Horizontal grid of images -->
+  <div class="column">
+    <center>
+      <div class="animation-container">
+        <div class="falling-text">Elevate</div>
+        <div class="falling-text">Empower</div>
+        <div class="falling-text">Enhance</div>
+      </div>
+      <br>
+    </center>
+    <div class="grid-container">
+      <div class="column1">
+          <div class="grid-item">
+              <img src="Images\sale.jpg" alt="Image 1">
+              <div class="overlay-text">70% Off on Premium Brands</div>
+          </div>
+          <div class="grid-item">
+              <img src="Images\products.jpg" alt="Image 3">
+              <div class="overlay-text">Your go-to-place for every product</div>
+          </div>
+      </div>
+      
+          <div class="grid-item">
+              <img src="Images\outfit.jpg" alt="Image 2">
+              <div class="overlay-text">Style your outfits</div>
+          </div>
+    </div>
+  </div>
+
+  <!-- PREVIOUSLY VIEWED ITEMS -->
+  <!--Panel of images in a slideshow-->
+  <div class="slideshow-container">
+    <center>
+      <div class="heading2">Items you have previously viewed</div>
+      <br><hr>
+    </center> 
+    <div class="slides">
+      <img src="Images\previouslyseen1.jpg" alt="Image 1">
+      <img src="Images\previouslyseen2.jpg" alt="Image 2">
+      <img src="Images\previouslyseen3.jpg" alt="Image 3">
+      <img src="Images\previouslyseen4.jpg" alt="Image 4">
+      <img src="Images\previouslyseen5.jpg" alt="Image 5">
+      <img src="Images\previouslyseen6.jpg" alt="Image 6">
+      <img src="Images\previouslyseen7.jpg" alt="Image 7">
+      <img src="Images\previouslyseen8.jpg" alt="Image 8">
+      <img src="Images\previouslyseen9.jpg" alt="Image 9">
+      <img src="Images\previouslyseen10.jpg" alt="Image 10">
+    </div>
+
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!--To control the slideshow movement-->
+  <script src="PreviouslyViewed.js"></script>
+
+</body>
+</html>

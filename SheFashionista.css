@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background-color: white;
+    font-family: Montserrat, sans-serif;
+    justify-content: center;
+}
+
+hr {
+    max-width: 50%;
+    justify-content: center;
+}
+
+/* NAVBAR */
+/* Menu Options and Dropdown Menu Styling */
+.navbar {
+    background-color: black;
+    position: relative;
+    z-index: 100;
+    padding: 3.5px;
+    top: 0;
+    margin: 0;
+    border: #FFFFFF;
+}
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #FFFFFF;
+    max-height: 2%;
+}
+.navbar li {
+    margin: 0 20px;
+    position: relative;
+}
+.navbar a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+}
+a.login {
+    font-size: 1rem;
+    font-weight: 700;
+    font-weight: bold;
+    width: auto;
+    color: #FFFFFF;
+    background:transparent;
+    margin: 2%;
+    border: 1px solid white;
+    border-radius:25px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all .28s cubic-bezier(.25,.46,.45,.94);;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    min-width: 160px;
+    border: #292929;
+    z-index: 1;
+}
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+}
+/* Hover effects */
+.navbar a:hover {
+    font-weight: bold;
+}
+.navbar li:hover .dropdown-content {
+    display: block;
+    background-color: black;
+    color: white;
+}
+.dropdown-content a:hover {
+    color: #02bff4;
+}
+a.login:hover {
+    border-color: #02bff4;
+    background-color: transparent;
+    color: #02bff4;
+    width: auto;
+}
+#check {
+    display: none;
+}
+/* "More" Option */
+.more {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* To adjust the menu "More" */
+@media(max-width:935px) {
+    .header{
+        padding: 0.6rem 1rem;     
+    }
+}
+@media(max-width:903px) {
+    .more{
+        display: inline-flex;
+    }
+    .navbar{
+        background-color:black;
+        position: absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        height: 0;
+        overflow: hidden;
+        transition: .3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 100;
+    }
+    #check:checked~.navbar{
+        height: 17rem;
+    }
+    .navbar a{
+        margin: 0.8rem 0;
+    }
+}
+/* To fix the navbar on the top of the page while scrolling */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* HEADING */
+/* Typing animation */
+.heading {
+    padding-top: 15%;
+    color: black;
+    justify-content: center;
+    position: relative;
+    font-weight: 500;
+    max-width: 100%;
+}
+#typing-animation {
+    font-size: 64px;
+    color: black(241, 117, 35);
+    overflow: visible;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    z-index: 200;
+    opacity: 1;
+    visibility: visible;
+}
+/* Blinking cursor animation */
+@keyframes blink {
+    60% {
+      border-color: transparent;
+    }
+}
+.cursor {
+    display: inline-block;
+    width: .1em;
+    animation: blink 1s step-end infinite;
+}
+
+/* MAIN CAROUSEL BOX */
+.carousel-box {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 0 auto;
+}
+.carousel {
+    display: flex;
+    height: 400px;
+    margin: 0;
+    position: relative;
+    align-items: center;
+}
+/* Carousel items and movement */
+.carousel-item {
+    height: 200px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 330px;
+    z-index: 0;
+    border-radius: 15px;
+    background-size:contain;
+}
+.carousel-item-1 {
+    left: -15%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+.carousel-item-2,.carousel-item-6 {
+    height: 250px;
+    opacity: .6;
+    width: 380px;
+    z-index: 1;
+}
+.carousel-item-3,.carousel-item-5 {
+    height: 300px;
+    opacity: .8;
+    width: 430px;
+    z-index: 2;
+}
+.carousel-item-2 {
+    left: 0%;
+    transform: translateX(-50%)
+}
+.carousel-item-3 {
+   left: 20%;
+   transform: translateX(-50%)
+}
+.carousel-item-4 {
+    box-shadow: -2px 5px 33px 6px rgba(0,0,0,0.35);
+    height: 350px;
+    width: 490px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+.carousel-item-5 {
+    left:80%;
+    transform: translateX(-50%);
+}
+.carousel-item-6 {
+    left:100%;
+    transform: translateX(-50%);
+}
+.carousel-item-7 {
+    left: 115%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+.carousel-controls {
+    align-self: center;
+}
+.carousel-control-previous,.carousel-control-next {
+    background-color: transparent;
+    color: black;
+    border:none;
+    font-size: 1.2rem;
+    margin:10px 40px;
+    cursor: pointer;
+}
+.carousel-control-previous:hover,.carousel-control-next:hover {
+    font-weight: bold;
+}
+.carousel-control-previous {
+    padding: 5px 15px;
+}
+.carousel-control-next {
+    padding: 5px 25px;
+}
+
+/* HORIZONTAL GRID OF IMAGES */
+.column {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+.animation-container {
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    z-index: 200;
+}
+.falling-text {
+    position: absolute;
+    padding-right: 80%;
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fallAnimation 1s ease-out forwards; /* Animation duration and easing */
+}
+@keyframes fallAnimation {
+    0% {
+      top: -50px;
+      opacity: 0;
+    }
+    100% {
+      top: calc(50% + 50px * var(--index)); /* Adjust the final position as needed */
+      opacity: 1;
+    }
+}
+/* Delay and set index for each falling text */
+.falling-text:nth-child(2) {
+    animation-delay: 1s;
+    --index: 1;
+}
+.falling-text:nth-child(3) {
+    animation-delay: 2s;
+    --index: 2;
+}
+/* Grid of images */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.column1 {
+      display: flex;
+      flex-direction: column;
+}
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+.grid-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+/* Image hover effects */
+.grid-item:hover img {
+    transform: scale(1.1);
+    opacity: 75%;
+}
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.grid-item:hover .overlay-text {
+    opacity: 1;
+}  
+
+
+/* IMAGE SLIDESHOW */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: 0;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+}
+.slides {
+    display: flex;
+    max-width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+img {
+    width: 50%;
+    height: auto;
+    margin: 4%;
+}
+.heading2 {
+    padding-top: 5%;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+}
+/* Navigation arrows style */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(96, 94, 94);
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+} 
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.next {
+    right: 0;
+}
+/* Hover effect on arrows */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
